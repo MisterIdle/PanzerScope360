@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CharacterSkin" Collapsed="true">
+    <Position X="16" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Managers\Character\CharacterSkin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterSkinDisplay" Collapsed="true">
+    <Position X="16" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAEABAgAAQQAACCAAAAAIAAAAQQAAQAACAAMAgAgA=</HashCode>
+      <FileName>Scripts\Managers\Character\CharacterSkinDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SkinManager" Collapsed="true">
+    <Position X="17.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAAAAACADAAAgBAAAAAAAAABAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Managers\Character\SkinManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TankSkin" Collapsed="true">
+    <Position X="17.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Scripts\Managers\Character\TankSkin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FloatingText" Collapsed="true">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAAAACEAAQBAAAABQAIQAAAAAAAAAgACIAEIAAAQ=</HashCode>
+      <FileName>Scripts\Managers\Texts\FloatingText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextManager" Collapsed="true">
+    <Position X="14" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAACAAhAAAAQEBAAAgAABAAAAAAIAAAAAAAAE=</HashCode>
+      <FileName>Scripts\Managers\Texts\TextManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InGameManager" Collapsed="true">
+    <Position X="6.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RBDB1AIAHCJEUdgBIxMwghCAAAFFABQlgjgHGJICIIg=</HashCode>
+      <FileName>Scripts\Managers\Menu\InGameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuManager" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAAAAAACAAAAAQAIAAAEAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Managers\Menu\MenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIManager" Collapsed="true">
+    <Position X="9" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEBAAQAJAAAAAAAAAECAACAAAAAAAAAQAAAEA=</HashCode>
+      <FileName>Scripts\Managers\Menu\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioManager" Collapsed="true">
+    <Position X="19.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACAAQCAACAAAAAACAAAAA0AAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Managers\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseMenu" Collapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAABAAAABAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Managers\BaseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="15" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBAAAAAAACAABAAAIAAAgAEAAAFAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Scripts\Managers\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TranslationManager" Collapsed="true">
+    <Position X="15.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Managers\TranslationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Movable" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCQAAAAAAAEAAAAAgAAAAICAAJAAARDAAgAEAQAAAAA=</HashCode>
+      <FileName>Scripts\GameObject\Movable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Obus" Collapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAABAACgAAAAAAAAgAAAAAACAMAQJBAgAAAAAAAAA=</HashCode>
+      <FileName>Scripts\GameObject\Obus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tank" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>4SEIiAAIqGKogBEkCwsAdAATTAAOjAhAD+AAaAghwAA=</HashCode>
+      <FileName>Scripts\GameObject\Tank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimatedTextureRect" Collapsed="true">
+    <Position X="18" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACAAAAQAAAAAAAAAAAAAAAAAAAAAAoAAAIgCABAA=</HashCode>
+      <FileName>Scripts\Utils\AnimatedTextureRect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hand" Collapsed="true">
+    <Position X="14.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Utils\Hand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectPool" Collapsed="true">
+    <Position X="9.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAABAAAAAAIAAAAAAAAAAAAgIABAAAAA=</HashCode>
+      <FileName>Scripts\Utils\ObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Touch" Collapsed="true">
+    <Position X="11.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAACAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Utils\Touch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TweenPaths" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAACAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\Utils\TweenPaths.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Explosion" Collapsed="true">
+    <Position X="12.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scripts\FX\Explosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GameStats" Collapsed="true">
+    <Position X="11.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAEAAAAAAAAAACAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Scripts\Utils\GameStates.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

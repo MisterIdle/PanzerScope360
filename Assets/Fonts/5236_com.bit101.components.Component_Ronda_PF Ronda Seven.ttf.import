@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://78nguhsvhelc"
+path="res://.godot/imported/5236_com.bit101.components.Component_Ronda_PF Ronda Seven.ttf-2611e4d7306e9082ffc6ed9becd15ed9.fontdata"
+
+[deps]
+
+source_file="res://Assets/Fonts/5236_com.bit101.components.Component_Ronda_PF Ronda Seven.ttf"
+dest_files=["res://.godot/imported/5236_com.bit101.components.Component_Ronda_PF Ronda Seven.ttf-2611e4d7306e9082ffc6ed9becd15ed9.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

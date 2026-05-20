@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy2d5fasqclrj"]
+
+[ext_resource type="Texture2D" uid="uid://7hghu1dhogw6" path="res://Assets/Images/Menu/Timer.png" id="1_umn6v"]
+[ext_resource type="FontFile" uid="uid://bbdpx1haah3p" path="res://Assets/Fonts/532_OpenDyslexic.ttf" id="2_2t8g8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l0xu7"]
+font = ExtResource("2_2t8g8")
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Control"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -49.0
+offset_right = 69.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_umn6v")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.778
+offset_left = 40.96
+offset_right = 70.0
+offset_bottom = -37.03
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+text = "0:45"
+label_settings = SubResource("LabelSettings_l0xu7")
+horizontal_alignment = 1
+vertical_alignment = 1

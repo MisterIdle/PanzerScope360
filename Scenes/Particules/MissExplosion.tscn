@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://rlbc1f5ulcq1"]
+
+[ext_resource type="Texture2D" uid="uid://bflbltri2740f" path="res://Assets/Images/Tank/Smoke.png" id="1_hw70f"]
+[ext_resource type="Script" path="res://Scripts/FX/Explosion.cs" id="2_m6o53"]
+
+[sub_resource type="Gradient" id="Gradient_mdgjy"]
+offsets = PackedFloat32Array(0.567398, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yrj57"]
+gradient = SubResource("Gradient_mdgjy")
+
+[sub_resource type="Curve" id="Curve_g10e4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.233766, 0.991558), 0.764706, 0.764706, 0, 0, Vector2(0.782467, 1), 2.23721, 2.23721, 0, 0, Vector2(0.912338, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_tgvi3"]
+curve = SubResource("Curve_g10e4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hdy4m"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_tgvi3")
+color_ramp = SubResource("GradientTexture1D_yrj57")
+
+[node name="MissExplosion" type="GPUParticles2D"]
+emitting = false
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_hdy4m")
+texture = ExtResource("1_hw70f")
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+script = ExtResource("2_m6o53")

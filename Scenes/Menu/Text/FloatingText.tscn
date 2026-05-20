@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bia8u6qbq77ka"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/Texts/FloatingText.cs" id="1_epfol"]
+[ext_resource type="FontFile" uid="uid://dmuh7lqh4ouq0" path="res://Assets/Fonts/694_Edit Undo BRK.ttf" id="2_f2gq4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xm1ws"]
+font = ExtResource("2_f2gq4")
+font_size = 100
+outline_size = 60
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xunlc"]
+font = ExtResource("2_f2gq4")
+font_size = 141
+
+[node name="FloatingText" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_epfol")
+label = NodePath("Label")
+labelSettingsTemplate = SubResource("LabelSettings_xm1ws")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOREM"
+label_settings = SubResource("LabelSettings_xunlc")
+horizontal_alignment = 1
+vertical_alignment = 1

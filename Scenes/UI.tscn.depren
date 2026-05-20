@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckxudwas3vmoc"]
+
+[ext_resource type="Script" path="res://Scripts/UIManager.cs" id="1_x6758"]
+[ext_resource type="Script" path="res://Scripts/TextManager.cs" id="2_17sl2"]
+[ext_resource type="PackedScene" uid="uid://bia8u6qbq77ka" path="res://Scenes/Menu/Text/FloatingText.tscn" id="2_083ed"]
+[ext_resource type="PackedScene" uid="uid://co7f7r6ffcnnd" path="res://Scenes/Menu/UI/InGame.tscn" id="3_bacda"]
+[ext_resource type="PackedScene" uid="uid://cbsqhgqs7mrac" path="res://Scenes/Menu/UI/Frame.tscn" id="3_g2wv1"]
+[ext_resource type="PackedScene" uid="uid://cy2d5fasqclrj" path="res://Scenes/Menu/Timer.tscn" id="4_5rwbs"]
+
+[node name="UI" type="Control" node_paths=PackedStringArray("frame", "handContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6758")
+frame = NodePath("Global/Frame")
+handContainer = NodePath("Global/Frame/HandContainer")
+menuState = 2
+
+[node name="TextManager" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_17sl2")
+textScene = ExtResource("2_083ed")
+
+[node name="Global" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" parent="Global" instance=ExtResource("3_g2wv1")]
+layout_mode = 1
+
+[node name="HandContainer" parent="Global/Frame" index="0"]
+offset_left = 86.0
+offset_right = -88.0
+
+[node name="InGame" parent="Global/Frame" node_paths=PackedStringArray("timerLabel", "timerBackground") instance=ExtResource("3_bacda")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.254
+anchor_top = 0.252
+anchor_right = 0.747
+anchor_bottom = 0.749
+offset_left = -0.320007
+offset_top = -4.16
+offset_right = 0.240051
+offset_bottom = 2.07996
+timerLabel = NodePath("../../../Timer/TextureRect/Label")
+timerBackground = NodePath("../../../Timer/TextureRect")
+
+[node name="Timer" parent="." instance=ExtResource("4_5rwbs")]
+layout_mode = 1
+
+[node name="TextureRect" parent="Timer" index="0"]
+pivot_offset = Vector2(29, 56)
+
+[node name="Label" parent="Timer/TextureRect" index="0"]
+text = "0:45"
+
+[editable path="Global/Frame"]
+[editable path="Global/Frame/InGame"]
+[editable path="Timer"]

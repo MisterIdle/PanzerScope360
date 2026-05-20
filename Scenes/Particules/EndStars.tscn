@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhu1mhcfnoct7"]
+
+[ext_resource type="Texture2D" uid="uid://c0vlrvlv2ade3" path="res://Assets/Images/Menu/Stars/StarSheet.png" id="1_3ys7x"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jkve7"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_ulnmi"]
+offsets = PackedFloat32Array(0.839286, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ljy6r"]
+gradient = SubResource("Gradient_ulnmi")
+
+[sub_resource type="Curve" id="Curve_smtn2"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q0csw"]
+curve = SubResource("Curve_smtn2")
+
+[sub_resource type="Curve" id="Curve_fanwb"]
+min_value = -2.0
+max_value = 2.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ydlk4"]
+curve = SubResource("Curve_fanwb")
+
+[sub_resource type="Curve" id="Curve_3iati"]
+_data = [Vector2(0, 0.552597), 0.0, 0.0, 0, 0, Vector2(0.75974, 1), 2.79024, 2.79024, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_pjw57"]
+curve = SubResource("Curve_3iati")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d0c0m"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 250.0
+initial_velocity_max = 750.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+orbit_velocity_curve = SubResource("CurveTexture_ydlk4")
+radial_velocity_min = -200.0
+radial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+damping_curve = SubResource("CurveTexture_q0csw")
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_pjw57")
+color_ramp = SubResource("GradientTexture1D_ljy6r")
+anim_speed_max = 1.0
+
+[node name="EndStars" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_jkve7")
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_d0c0m")
+texture = ExtResource("1_3ys7x")
+fixed_fps = 60

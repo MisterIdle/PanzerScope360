@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8k0sudrx5v22"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/Menu/UIManager.cs" id="1_hfxv3"]
+[ext_resource type="PackedScene" uid="uid://co7f7r6ffcnnd" path="res://Scenes/Menu/UI/InGame/InGame.tscn" id="2_lxe72"]
+[ext_resource type="Script" path="res://Scripts/Managers/Texts/TextManager.cs" id="2_n7fq3"]
+[ext_resource type="PackedScene" uid="uid://cbsqhgqs7mrac" path="res://Scenes/Menu/UI/UI/Frame.tscn" id="2_osju3"]
+[ext_resource type="PackedScene" uid="uid://bia8u6qbq77ka" path="res://Scenes/Menu/Text/FloatingText.tscn" id="3_iwa2q"]
+[ext_resource type="PackedScene" uid="uid://cy2d5fasqclrj" path="res://Scenes/Menu/UI/UI/Timer.tscn" id="4_5vds4"]
+
+[node name="UI" type="Control" node_paths=PackedStringArray("frame", "handContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfxv3")
+frame = NodePath("Frame")
+baseScale = Vector2(1.1, 1.1)
+handContainer = NodePath("Frame/HandContainer")
+menuState = 2
+
+[node name="TextManager" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_n7fq3")
+textScene = ExtResource("3_iwa2q")
+
+[node name="Frame" parent="." instance=ExtResource("2_osju3")]
+layout_mode = 1
+
+[node name="HandContainer" parent="Frame" index="0"]
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.143
+anchor_right = 0.919
+anchor_bottom = 0.858
+offset_left = -0.400009
+offset_top = -0.440002
+offset_right = -0.52002
+offset_bottom = 0.359985
+
+[node name="InGame" parent="Frame" node_paths=PackedStringArray("timerLabel", "timerBackground") instance=ExtResource("2_lxe72")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253
+anchor_top = 0.251
+anchor_right = 0.748
+anchor_bottom = 0.749
+offset_left = -0.240021
+offset_top = -0.0800171
+offset_right = 0.159973
+offset_bottom = 0.0799561
+timerLabel = NodePath("../../Timer/TextureRect/Label")
+timerBackground = NodePath("../../Timer/TextureRect")
+
+[node name="Timer" parent="." instance=ExtResource("4_5vds4")]
+layout_mode = 1
+offset_left = -25.0
+offset_top = 0.0
+offset_right = -25.0
+offset_bottom = 0.0
+
+[node name="TextureRect" parent="Timer" index="0"]
+offset_left = -32.0
+offset_top = -71.0
+offset_right = 74.0
+offset_bottom = 68.0
+
+[node name="Label" parent="Timer/TextureRect" index="0"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -39.5
+offset_right = 29.0
+offset_bottom = 1.5
+grow_horizontal = 0
+
+[editable path="Frame"]
+[editable path="Timer"]

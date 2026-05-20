@@ -1,0 +1,263 @@
+[gd_scene load_steps=24 format=3 uid="uid://c8hi4txmg6n6k"]
+
+[ext_resource type="Texture2D" uid="uid://chux4meq1o0gx" path="res://Assets/Images/Menu/Lego.jpg" id="1_0c3ql"]
+[ext_resource type="Script" path="res://Scripts/Managers/TitleCard/TitlecardSub.cs" id="1_6tk8p"]
+[ext_resource type="Shader" path="res://Scripts/Shader/RemoveColor.gdshader" id="2_badau"]
+[ext_resource type="Texture2D" uid="uid://cp4sjp6ml2muw" path="res://Assets/Images/Menu/Anim/Spin/A.png" id="3_8jjhu"]
+[ext_resource type="Script" path="res://Scripts/Utils/AnimatedTextureRect.cs" id="4_6etgm"]
+[ext_resource type="Texture2D" uid="uid://dd28l8aun2i2h" path="res://Assets/Images/Menu/Anim/Spin/B.png" id="5_u8vhj"]
+[ext_resource type="Texture2D" uid="uid://7hrldprkit2q" path="res://Assets/Images/Menu/Anim/Spin/C.png" id="6_ayjqq"]
+[ext_resource type="Texture2D" uid="uid://05id85pdsm7n" path="res://Assets/Images/Menu/Anim/Spin/D.png" id="7_4ylc4"]
+[ext_resource type="Texture2D" uid="uid://byibvnjuc857p" path="res://Assets/Images/Menu/Anim/Spin/E.png" id="8_wahok"]
+[ext_resource type="Texture2D" uid="uid://4a8joh6wg6ue" path="res://Assets/Images/Menu/Anim/Spin/F.png" id="9_aggaw"]
+[ext_resource type="Texture2D" uid="uid://dkqb6tnf1nk1d" path="res://Assets/Images/Menu/Anim/Spin/G.png" id="10_c4u62"]
+[ext_resource type="Texture2D" uid="uid://uaeof2q6fvod" path="res://Assets/Images/Menu/Anim/Spin/H.png" id="11_an8wm"]
+[ext_resource type="Texture2D" uid="uid://q21ymhnaoq26" path="res://Assets/Images/Menu/Glow.png" id="12_we1vx"]
+[ext_resource type="Texture2D" uid="uid://dse0hiewhx776" path="res://Assets/Images/Menu/Bar.png" id="13_rcehu"]
+[ext_resource type="PackedScene" uid="uid://cyc0xevai3gqc" path="res://Scenes/Menu/Character/Character.tscn" id="14_7ckxs"]
+[ext_resource type="Texture2D" uid="uid://da7ligp5phcj" path="res://Assets/Images/Menu/Banner.png" id="15_2hm4i"]
+[ext_resource type="FontFile" uid="uid://dmuh7lqh4ouq0" path="res://Assets/Fonts/694_Edit Undo BRK.ttf" id="16_868uy"]
+[ext_resource type="FontFile" uid="uid://bbdpx1haah3p" path="res://Assets/Fonts/532_OpenDyslexic.ttf" id="17_8k68u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ic2u"]
+shader = ExtResource("2_badau")
+shader_parameter/is_loser = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i73rv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8jjhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u8vhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ayjqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4ylc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wahok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aggaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c4u62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_an8wm")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 25.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hldi7"]
+font = ExtResource("16_868uy")
+font_size = 70
+font_color = Color(0.294118, 0.827451, 0.917647, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s1ddi"]
+font = ExtResource("17_8k68u")
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ehick"]
+font = ExtResource("17_8k68u")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+shadow_color = Color(1, 1, 1, 0)
+
+[node name="TitleCardSub" type="Control" node_paths=PackedStringArray("titleContainer", "endGameContainer", "animatedBackground", "characters")]
+process_thread_group = 1
+process_thread_group_order = 5
+process_thread_messages = 0
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tk8p")
+titleContainer = NodePath("TitleScreen")
+endGameContainer = NodePath("End")
+animatedBackground = NodePath("Spin")
+characters = [NodePath("End/PlayerB"), NodePath("End/PlayerA")]
+
+[node name="Lego" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.744
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.26001
+offset_top = -0.52002
+offset_right = 0.26001
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0c3ql")
+expand_mode = 2
+stretch_mode = 6
+flip_h = true
+flip_v = true
+
+[node name="Spin" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_3ic2u")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8jjhu")
+script = ExtResource("4_6etgm")
+sprites = SubResource("SpriteFrames_i73rv")
+currentAnimation = "normal"
+autoPlay = true
+
+[node name="Glow" type="TextureRect" parent="Spin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_we1vx")
+
+[node name="Bar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.019
+anchor_right = 1.0
+anchor_bottom = 0.019
+offset_top = -3.48
+offset_bottom = 3.48
+texture = ExtResource("13_rcehu")
+
+[node name="TitleScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character" parent="TitleScreen" instance=ExtResource("14_7ckxs")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.501
+anchor_top = 0.751
+anchor_right = 0.501
+anchor_bottom = 0.751
+offset_left = -0.0800781
+offset_top = -14.0801
+offset_right = -0.0800781
+offset_bottom = -14.0801
+
+[node name="Band" type="TextureRect" parent="TitleScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.211
+anchor_right = 1.0
+anchor_bottom = 0.412
+offset_left = 2.0
+offset_top = -132.88
+offset_right = -1.0
+offset_bottom = 11.04
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_2hm4i")
+
+[node name="Title" type="Label" parent="TitleScreen/Band"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_right = 0.924
+anchor_bottom = 0.447
+offset_left = 0.149994
+offset_top = -3.0
+offset_right = 0.00793457
+offset_bottom = 0.060997
+grow_horizontal = 2
+grow_vertical = 2
+text = "Panzer-Scope 360"
+label_settings = SubResource("LabelSettings_hldi7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="TitleScreen/Band"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.346
+anchor_right = 1.0
+anchor_bottom = 0.65
+offset_top = -0.00200653
+offset_bottom = -0.0500031
+grow_horizontal = 2
+grow_vertical = 2
+text = "ID_RULES"
+label_settings = SubResource("LabelSettings_s1ddi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="End" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerB" parent="End" instance=ExtResource("14_7ckxs")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.286
+anchor_top = 0.702
+anchor_right = 0.286
+anchor_bottom = 0.702
+offset_left = 0.119995
+offset_top = -0.160034
+offset_right = 0.119995
+offset_bottom = -0.160034
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(6, 6)
+targetPlayerId = 1
+
+[node name="PlayerA" parent="End" instance=ExtResource("14_7ckxs")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.728
+anchor_top = 0.702
+anchor_right = 0.728
+anchor_bottom = 0.702
+offset_left = -0.240051
+offset_top = -0.160034
+offset_right = -0.240051
+offset_bottom = -0.160034
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(6, 6)
+targetPlayerId = 0
+
+[node name="Nom" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.5
+offset_top = 29.0
+offset_right = 94.5
+offset_bottom = 53.0
+grow_horizontal = 2
+text = "Alexy HOUBLOUP"
+label_settings = SubResource("LabelSettings_ehick")
+horizontal_alignment = 1
+vertical_alignment = 1

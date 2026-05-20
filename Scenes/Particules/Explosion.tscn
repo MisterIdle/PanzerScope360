@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmr86eyxix1y3"]
+
+[ext_resource type="Texture2D" uid="uid://di0e4fmifm5m2" path="res://Assets/Images/Menu/Stars/E.png" id="1_c03p2"]
+[ext_resource type="Script" path="res://Scripts/FX/Explosion.cs" id="2_8xvpo"]
+
+[sub_resource type="Gradient" id="Gradient_pw3jh"]
+offsets = PackedFloat32Array(0.817857, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q4vs0"]
+gradient = SubResource("Gradient_pw3jh")
+
+[sub_resource type="Curve" id="Curve_gmjwd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.70836, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d06lx"]
+curve = SubResource("Curve_gmjwd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nu4ml"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 4
+emission_point_count = 1
+angle_max = 720.0
+radial_velocity_max = 1000.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_d06lx")
+color_ramp = SubResource("GradientTexture1D_q4vs0")
+
+[node name="Explosion" type="GPUParticles2D"]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_nu4ml")
+texture = ExtResource("1_c03p2")
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+script = ExtResource("2_8xvpo")

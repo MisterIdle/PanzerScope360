@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://ultef4apqvnw"]
+
+[ext_resource type="Texture2D" uid="uid://dphcgfjn5hs3e" path="res://Assets/Images/Menu/Pause.png" id="1_u3wl8"]
+[ext_resource type="Script" path="res://Scripts/Utils/Hand.cs" id="2_d2sfk"]
+
+[sub_resource type="Animation" id="Animation_4ijdi"]
+resource_name = "Touch"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxlx2"]
+_data = {
+"Touch": SubResource("Animation_4ijdi")
+}
+
+[node name="Pause" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -25.0
+offset_right = 22.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u3wl8")
+script = ExtResource("2_d2sfk")
+animPath = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nxlx2")
+}

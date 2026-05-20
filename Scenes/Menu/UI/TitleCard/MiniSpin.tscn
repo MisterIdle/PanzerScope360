@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfrusmk6ulbqg"]
+
+[ext_resource type="Texture2D" uid="uid://052b3f4p837u" path="res://Assets/Images/Menu/Anim/Micro/A.png" id="1_ygbs2"]
+[ext_resource type="Script" path="res://Scripts/Utils/AnimatedTextureRect.cs" id="2_7ucxb"]
+[ext_resource type="Texture2D" uid="uid://ifdwovj5vxs8" path="res://Assets/Images/Menu/Anim/Micro/B.png" id="3_baubq"]
+[ext_resource type="Texture2D" uid="uid://brnknmmotiteq" path="res://Assets/Images/Menu/Anim/Micro/C.png" id="4_jiml8"]
+[ext_resource type="Texture2D" uid="uid://dwlhwsikrg0kl" path="res://Assets/Images/Menu/Anim/Micro/D.png" id="5_j2pwe"]
+[ext_resource type="Texture2D" uid="uid://cd4s5afd0spg1" path="res://Assets/Images/Menu/Anim/Micro/E.png" id="6_ycitq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2me2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ygbs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_baubq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jiml8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j2pwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ycitq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="MiniSpin" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ygbs2")
+script = ExtResource("2_7ucxb")
+sprites = SubResource("SpriteFrames_2me2b")
+autoPlay = true

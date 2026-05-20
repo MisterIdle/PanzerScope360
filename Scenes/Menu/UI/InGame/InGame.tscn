@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://co7f7r6ffcnnd"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/Menu/InGameManager.cs" id="1_tfowo"]
+[ext_resource type="PackedScene" uid="uid://d0cf7iapyddmt" path="res://Scenes/GameObjects/Tank.tscn" id="2_2ew26"]
+[ext_resource type="PackedScene" uid="uid://dfrusmk6ulbqg" path="res://Scenes/Menu/UI/TitleCard/MiniSpin.tscn" id="3_3v2uy"]
+[ext_resource type="PackedScene" uid="uid://coih3vsvh4rjt" path="res://Scenes/Menu/UI/InGame/HealthBar.tscn" id="4_xagek"]
+[ext_resource type="PackedScene" uid="uid://bhu1mhcfnoct7" path="res://Scenes/Particules/EndStars.tscn" id="5_ewu2w"]
+[ext_resource type="Shader" path="res://Scripts/Shader/Wodden.gdshader" id="5_mbeej"]
+[ext_resource type="Texture2D" uid="uid://biom2cbh1ya38" path="res://Assets/Images/Menu/Plank.png" id="7_6275r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_feth7"]
+shader = ExtResource("5_mbeej")
+shader_parameter/edge_damage = 0.05
+shader_parameter/edge_noise_scale = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_epr4n"]
+shader = ExtResource("5_mbeej")
+shader_parameter/edge_damage = 0.05
+shader_parameter/edge_noise_scale = 8.0
+
+[node name="InGame" type="Control" node_paths=PackedStringArray("container", "healthBars", "winParticles", "winMiniSpin")]
+z_index = -4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfowo")
+tankScene = ExtResource("2_2ew26")
+container = NodePath("VBoxContainer")
+healthBars = [NodePath("VBoxContainer/HealthBar"), NodePath("VBoxContainer/HealthBar2")]
+winParticles = NodePath("EndStars")
+winMiniSpin = [NodePath("VBoxContainer/MiniSpin"), NodePath("VBoxContainer/MiniSpin2")]
+menuState = 3
+
+[node name="Plank" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_6275r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="MiniSpin" parent="VBoxContainer" instance=ExtResource("3_3v2uy")]
+visible = false
+z_index = 10
+layout_mode = 2
+flip_h = true
+
+[node name="HealthBar" parent="VBoxContainer" instance=ExtResource("4_xagek")]
+layout_mode = 2
+
+[node name="ColorA" type="ColorRect" parent="VBoxContainer"]
+material = SubResource("ShaderMaterial_feth7")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.960784, 0.352941, 0.286275, 0.588235)
+
+[node name="ColorB" type="ColorRect" parent="VBoxContainer"]
+material = SubResource("ShaderMaterial_epr4n")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.658824, 0.717647, 0.266667, 0.588235)
+
+[node name="HealthBar2" parent="VBoxContainer" instance=ExtResource("4_xagek")]
+layout_mode = 2
+fill_mode = 1
+
+[node name="MiniSpin2" parent="VBoxContainer" instance=ExtResource("3_3v2uy")]
+visible = false
+z_index = 10
+layout_mode = 2
+
+[node name="EndStars" parent="." instance=ExtResource("5_ewu2w")]
+position = Vector2(521, 1080)
+emitting = false

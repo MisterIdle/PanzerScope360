@@ -1,0 +1,111 @@
+[gd_scene load_steps=32 format=3 uid="uid://ys1v13t4dg5w"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/TranslationManager.cs" id="1_7iu7w"]
+[ext_resource type="Script" path="res://Scripts/Managers/AudioManager.cs" id="1_js2b5"]
+[ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="1_sb1d5"]
+[ext_resource type="Script" path="res://Scripts/Managers/Menu/MenuManager.cs" id="2_chp2u"]
+[ext_resource type="AudioStream" uid="uid://bq5maoer4oy5c" path="res://Assets/Audio/Music/musicIntro.ogg" id="2_sdfc7"]
+[ext_resource type="AudioStream" uid="uid://cu3ptpe0d34u6" path="res://Assets/Audio/Music/musicVictory.ogg" id="3_6qka6"]
+[ext_resource type="Script" path="res://Scripts/Managers/Character/SkinManager.cs" id="3_ilttq"]
+[ext_resource type="Texture2D" uid="uid://d1ceivll2enhy" path="res://Assets/Images/Character/Face/Fraise.png" id="4_iwgc6"]
+[ext_resource type="AudioStream" uid="uid://cj2xacjubqbfy" path="res://Assets/Audio/Music/musicEnd.ogg" id="4_ssblg"]
+[ext_resource type="AudioStream" uid="uid://xc61dhc02s2n" path="res://Assets/Audio/Music/musicInGame.ogg" id="4_ubju2"]
+[ext_resource type="Script" path="res://Scripts/Managers/Character/CharacterSkin.cs" id="5_x31h1"]
+[ext_resource type="Texture2D" uid="uid://dmf4dw4dte50f" path="res://Assets/Images/Character/Face/Kiwi.png" id="6_paw47"]
+[ext_resource type="PackedScene" uid="uid://buc4gs1y4uiqs" path="res://Scenes/Menu/UI/TitleCard/Titlecard.tscn" id="6_qrmlf"]
+[ext_resource type="AudioStream" uid="uid://db81pda2w1e0w" path="res://Assets/Audio/SFX/sfxAttention.ogg" id="6_unets"]
+[ext_resource type="Texture2D" uid="uid://d0livtobnimp7" path="res://Assets/Images/Tank/ObusRed.png" id="7_afrp5"]
+[ext_resource type="AudioStream" uid="uid://y1wf1uvvkh0k" path="res://Assets/Audio/SFX/sfxBomb.ogg" id="7_duhoc"]
+[ext_resource type="Script" path="res://Scripts/Managers/Character/TankSkin.cs" id="7_uyq3v"]
+[ext_resource type="Texture2D" uid="uid://d2se08ci4gk30" path="res://Assets/Images/Tank/TankRed.png" id="9_a4df8"]
+[ext_resource type="AudioStream" uid="uid://qxxb5ghre0bq" path="res://Assets/Audio/SFX/sfxReload.ogg" id="9_uuioa"]
+[ext_resource type="Texture2D" uid="uid://dav2q41rchx7m" path="res://Assets/Images/Tank/ObusGreen.png" id="10_2tbne"]
+[ext_resource type="AudioStream" uid="uid://c28bf6tex75fk" path="res://Assets/Audio/SFX/sfxImpact.ogg" id="10_6lr8t"]
+[ext_resource type="AudioStream" uid="uid://m7o2iryne8ny" path="res://Assets/Audio/SFX/sfxBump.ogg" id="10_8gwdu"]
+[ext_resource type="AudioStream" uid="uid://df6oex3mjf1im" path="res://Assets/Audio/SFX/sfxExplosion.ogg" id="11_2i6g1"]
+[ext_resource type="Texture2D" uid="uid://df451l1rpagfd" path="res://Assets/Images/Tank/TankGreen.png" id="11_nfj75"]
+[ext_resource type="AudioStream" uid="uid://b82prvlb2xg18" path="res://Assets/Audio/SFX/sfxTimer.ogg" id="12_er73p"]
+[ext_resource type="AudioStream" uid="uid://d26i0kg1iexhu" path="res://Assets/Audio/SFX/sfxTimerUp.ogg" id="13_hltob"]
+[ext_resource type="PackedScene" uid="uid://b8k0sudrx5v22" path="res://Scenes/Menu/UI/UI/UI.tscn" id="26_2627e"]
+
+[sub_resource type="Resource" id="Resource_f6uul"]
+script = ExtResource("5_x31h1")
+headTexture = ExtResource("4_iwgc6")
+color = Color(0.961574, 0.352298, 0.286312, 1)
+
+[sub_resource type="Resource" id="Resource_i6dhg"]
+script = ExtResource("5_x31h1")
+headTexture = ExtResource("6_paw47")
+color = Color(0.659088, 0.718921, 0.26751, 1)
+
+[sub_resource type="Resource" id="Resource_lf6m3"]
+script = ExtResource("7_uyq3v")
+tankTexture = ExtResource("9_a4df8")
+obusTexture = ExtResource("7_afrp5")
+
+[sub_resource type="Resource" id="Resource_ihthe"]
+script = ExtResource("7_uyq3v")
+tankTexture = ExtResource("11_nfj75")
+obusTexture = ExtResource("10_2tbne")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="MusicManager" type="Node" parent="Managers"]
+script = ExtResource("1_js2b5")
+musicTracks = [ExtResource("2_sdfc7"), ExtResource("4_ubju2"), ExtResource("3_6qka6"), ExtResource("4_ssblg")]
+soundEffects = [ExtResource("6_unets"), ExtResource("7_duhoc"), ExtResource("9_uuioa"), ExtResource("10_6lr8t"), ExtResource("10_8gwdu"), ExtResource("11_2i6g1"), ExtResource("12_er73p"), ExtResource("13_hltob")]
+
+[node name="TranslationManager" type="Node" parent="Managers"]
+script = ExtResource("1_7iu7w")
+
+[node name="GameManager" type="Node" parent="Managers" node_paths=PackedStringArray("touchContainer")]
+script = ExtResource("1_sb1d5")
+touchContainer = NodePath("../../Touch/TouchContainer")
+
+[node name="MenuManager" type="Node" parent="Managers" node_paths=PackedStringArray("menuList")]
+script = ExtResource("2_chp2u")
+menuList = [NodePath("../../TitleCard"), NodePath("../../UI"), NodePath("../../UI/Frame/InGame")]
+
+[node name="SkinManager" type="Node" parent="Managers"]
+script = ExtResource("3_ilttq")
+characterSkins = [SubResource("Resource_f6uul"), SubResource("Resource_i6dhg")]
+tankSkins = [SubResource("Resource_lf6m3"), SubResource("Resource_ihthe")]
+
+[node name="UI" parent="." instance=ExtResource("26_2627e")]
+layout_mode = 1
+
+[node name="TitleCard" parent="." instance=ExtResource("6_qrmlf")]
+layout_mode = 1
+
+[node name="Touch" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TouchContainer" type="VBoxContainer" parent="Touch"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = 12.0
+offset_right = -17.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[editable path="UI"]
+[editable path="UI/Frame"]
+[editable path="UI/Timer"]
